@@ -1,6 +1,7 @@
 package com.itheima.test;
 
 import com.itheima.damain.Account;
+import com.itheima.damain.AccountUser;
 import com.itheima.dao.AccountDao;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -45,6 +46,15 @@ public class AccountTest {
     @Test
     public void testFindAll() throws IOException {
         List<Account>accounts=accountDao.findAll();
+        for(Account account:accounts){
+            System.out.println(account);
+        }
+
+    }
+
+    @Test
+    public void testFindAccountUserAll() throws IOException {
+        List<AccountUser>accounts=accountDao.findAllAccount();
         for(Account account:accounts){
             System.out.println(account);
         }
